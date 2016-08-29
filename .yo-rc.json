@@ -1,0 +1,12 @@
+{
+  "generator-ng-fullstack": {
+    "username": "SebaSOFT",
+    "appName": "AchievePlay",
+    "stack": "fullstack",
+    "server": "node",
+    "client": "ng1",
+    "transpilerServer": "node",
+    "secure": true,
+    "differentStaticServer": false
+  }
+}
