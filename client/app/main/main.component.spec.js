@@ -6,7 +6,6 @@ import {
 } from './main.component';
 
 describe('Component: MainComponent', function() {
-
   beforeEach(angular.mock.module(main));
   beforeEach(angular.mock.module('stateMock'));
   beforeEach(angular.mock.module('socketMock'));
@@ -26,9 +25,9 @@ describe('Component: MainComponent', function() {
     scope = $rootScope.$new();
     state = $state;
     mainComponent = $componentController('main', {
-      $http: $http,
+      $http,
       $scope: scope,
-      socket: socket
+      socket
     });
   }));
 

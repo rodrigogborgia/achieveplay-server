@@ -105,9 +105,9 @@ describe('Thing API:', function() {
       updatedThing = {};
     });
 
-    it('should respond with the original thing', function() {
-      updatedThing.name.should.equal('New Thing');
-      updatedThing.info.should.equal('This is the brand new thing!!!');
+    it('should respond with the updated thing', function() {
+      updatedThing.name.should.equal('Updated Thing');
+      updatedThing.info.should.equal('This is the updated thing!!!');
     });
 
     it('should respond with the updated thing on a subsequent GET', function(done) {

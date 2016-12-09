@@ -1,6 +1,6 @@
 {
   "generator-angular-fullstack": {
-    "generatorVersion": "4.0.1",
+    "generatorVersion": "4.1.1",
     "endpointDirectory": "server/api/",
     "insertRoutes": true,
     "registerRoutesFile": "server/routes.js",
@@ -23,6 +23,7 @@
       "bootstrap": true,
       "uibootstrap": false,
       "socketio": true,
+      "auth": true,
       "models": true,
       "mongooseModels": true,
       "mongoose": true,

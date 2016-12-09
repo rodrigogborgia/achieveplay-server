@@ -43,6 +43,7 @@ module.exports = function(config) {
       require('karma-chrome-launcher'),
       require('karma-coverage'),
       require('karma-firefox-launcher'),
+
       require('karma-jasmine'),
       require('karma-spec-reporter'),
       require('karma-phantomjs-launcher'),
