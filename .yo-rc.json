@@ -22,7 +22,6 @@
       "uirouter": true,
       "bootstrap": true,
       "uibootstrap": false,
-      "socketio": true,
       "auth": true,
       "models": true,
       "mongooseModels": true,
