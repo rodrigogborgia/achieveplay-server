@@ -20,7 +20,7 @@
       "html": true,
       "css": true,
       "uirouter": true,
-      "bootstrap": true,
+      "bootstrap": false,
       "uibootstrap": false,
       "auth": true,
       "models": true,
