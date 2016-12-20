@@ -35,7 +35,10 @@ module.exports = function(config) {
         type: 'json',
         subdir: '.',
         file: 'client-coverage.json'
-      }],
+      },{
+		type: 'lcovonly', // lcov or lcovonly are required for generating lcov.info files
+        subdir: '.',
+	  }],
       dir: 'coverage/' //path to created html doc
     },
 
@@ -43,7 +46,7 @@ module.exports = function(config) {
       require('karma-chrome-launcher'),
       require('karma-coverage'),
       require('karma-firefox-launcher'),
-
+      require('karma-coveralls'),
       require('karma-jasmine'),
       require('karma-spec-reporter'),
       require('karma-phantomjs-launcher'),
@@ -69,7 +72,7 @@ module.exports = function(config) {
     // - junit
     // - growl
     // - coverage
-    reporters: ['spec', 'coverage'],
+    reporters: ['spec', 'coverage', 'coveralls'],
 
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: false,
