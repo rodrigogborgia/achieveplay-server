@@ -7,6 +7,9 @@ matrix:
     - node_js: 5.12.0
 before_script:
   - npm install -g gulp-cli node-gyp
+after_script:
+  - cat ./coverage/*.info > lcov.info 
+  - node node_modules/lcov-filter/index.js lcov.info config | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 services: mongodb
 cache:
   directories:

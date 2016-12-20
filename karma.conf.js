@@ -38,6 +38,7 @@ module.exports = function(config) {
       },{
 		type: 'lcovonly', // lcov or lcovonly are required for generating lcov.info files
         subdir: '.',
+		file: 'lcov-client.info'
 	  }],
       dir: 'coverage/' //path to created html doc
     },

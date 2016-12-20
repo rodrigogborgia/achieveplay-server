@@ -1,0 +1,11 @@
+verbose: false
+reporting:
+    print: summary
+    reports:
+        - lcovonly
+        - json
+    dir: ./coverage
+    report-config:
+        json: {file: server-coverage.json}
+        lcovonly: {file: lcov-server.info}
+        text-lcov: {file: lcov-server.info}
