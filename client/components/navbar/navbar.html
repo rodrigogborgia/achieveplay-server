@@ -18,15 +18,7 @@
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
-
-        <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li>
-        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
-        <li ng-show="$ctrl.isLoggedIn() && $ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="signup">Create User</a></li>
-
-
-        <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
+          <li ng-hide="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="login">Login</a></li>
 
           <!-- Notifications Menu -->
           <li ng-show="$ctrl.isLoggedIn()" class="dropdown notifications-menu">
@@ -57,17 +49,17 @@
             <!-- Menu Toggle Button -->
             <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <i class="fa fa-user" style="font-size: 16px; color: white;"></i>
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">{{ $ctrl.getCurrentUser().name }}</span>
+              <span class="hidden-xs">{{ $ctrl.currentUser().name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <i class="fa fa-user" style="font-size: 48px; color: white;"></i>
 
                 <p>
-                  {{ $ctrl.getCurrentUser().name }}
+                  {{ $ctrl.currentUser().name }}
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -102,7 +94,7 @@
     </nav>
   </header>
 
-    <!-- Left side column. contains the logo and sidebar -->
+  <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
 
     <!-- sidebar: style can be found in sidebar.less -->
@@ -111,10 +103,10 @@
       <!-- Sidebar user panel (optional) -->
       <div ng-show="$ctrl.isLoggedIn()" class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <i class="fa fa-user" style="font-size: 48px; color: white;"></i>
         </div>
         <div class="pull-left info">
-          <p>{{ $ctrl.getCurrentUser().name }}</p>
+          <p>{{ $ctrl.currentUser().name }}</p>
           <!-- Status -->
           <a href="javascript:void(0);"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
@@ -122,29 +114,14 @@
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu">
-        <li class="header">GENERAL</li>
-        <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="javascript:void(0);"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        
-        <li class="active"><a href="javascript:void(0);"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        
-        <li ng-repeat="item in $ctrl.menu" ui-sref-active="active">
-            <a ui-sref="{{item.state}}">{{item.title}}</a>
-        </li>
-        <li ng-show="$ctrl.isAdmin()" class="header">ADMIN</li>
-        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
-        <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="signup">Create User</a></li>
-
-        <li><a href="javascript:void(0);"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
-        <li class="treeview">
-          <a href="javascript:void(0);"><i class="fa fa-link"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+        <li class="header">MENU</li>        
+        <li ng-repeat="item in $ctrl.menu" ng-if="$ctrl.checkAccess(item)" ng-class="{treeview: item.sub}" ui-sref-active="active">
+          <a ng-if="!item.sub" ui-sref="{{item.state}}" ui-sref-active="active"><i class="fa {{item.icon}}"></i> <span><span ng-bind-html="item.title"></span></span></a>
+          <a ng-if="item.sub" href="javascript:void(0);" ui-sref-active="active"><i class="fa {{item.icon}}"></i> <span><span ng-bind-html="item.title"></span></span>
+            <span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="javascript:void(0);">Link in level 2</a></li>
-            <li><a href="javascript:void(0);">Link in level 2</a></li>
+          <ul ng-if="item.sub" href="javascript:void(0);" class="treeview-menu" ui-sref-active="active">
+            <li ng-repeat="subitem in item.sub"><a ui-sref="{{subitem.state}}" ui-sref-active="active"><i class="fa {{subitem.icon}}"></i> <span ng-bind-html="subitem.title"></span></a></li>
           </ul>
         </li>
       </ul>

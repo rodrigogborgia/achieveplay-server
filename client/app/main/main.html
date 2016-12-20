@@ -1,44 +1,43 @@
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <h1>
+      <i class="fa fa-home"></i> Inicio
+      <small>Esta es la p&aacute;gina de bienvenida al asistema de <b>Achieve</b>Play</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a ui-sref="main">
+      <span class="glyphicon glyphicon-knight" aria-hidden="true"></span> <b>Achieve</b>Play</a></li>
+      <li class="active">Inicio</li>
+    </ol>
+  </section>
 
-    <!-- Main content -->
-    <section class="content">
- <p><br/></p>
+  <!-- Main content -->
+  <section class="content">
+   <p><br/></p>
 
-<header class="hero-unit" id="banner">
+   <header class="hero-unit" id="banner">
+    <div class="container">
+      <h1>'Allo, 'Allo!</h1>
+      <p class="lead">Kick-start your next web app with Angular Fullstack</p>
+      <img src="assets/images/yeoman.png" alt="I'm Yeoman">
+    </div>
+  </header>
+
   <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
-        <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="page-header">Features:</h1>
+        <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in $ctrl.awesomeThings">
+          <li><a href="#" uib-tooltip="{{thing.info}}">{{thing.name}}</a></li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-
+</section>
 <p><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/></p>
-
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
