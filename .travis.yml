@@ -9,7 +9,7 @@ before_script:
   - npm install -g gulp-cli node-gyp
 after_script:
   - cat ./coverage/*.info > ./coverage/lcov-final.info 
-  - node node_modules/lcov-filter/index.js ./coverage/lcov-final.info config | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
+  - cat ./coverage/lcov-final.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
 services: mongodb
 cache:
   directories:
