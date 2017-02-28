@@ -10,6 +10,7 @@ export default class LoginController {
     login: undefined
   };
   submitted = false;
+  isLogin = true;
 
 
   /*@ngInject*/

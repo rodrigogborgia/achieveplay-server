@@ -46,6 +46,8 @@
 </div>
 <!-- /.login-box -->
 
+
+<!-- CSS fightning so we can have a significantly different login screen -->
 <style>
     html, body {
         min-height:100%;
@@ -55,6 +57,13 @@
     }
     body {
         background-color: #B2DCFF !important;
-        background: linear-gradient(0deg, #02579F 0%, #0385F4 100%);
+        background: linear-gradient(0deg, #02579F 0%, #0385F4 100%) !important
+    }
+    .layout-boxed .wrapper {
+        max-width: auto;
+        margin: 0 auto;
+        min-height: 100%;
+        box-shadow: none;
+        position: auto;
     }
 </style>

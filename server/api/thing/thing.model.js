@@ -1,5 +1,4 @@
 'use strict';
-
 import mongoose from 'mongoose';
 
 var ThingSchema = new mongoose.Schema({
