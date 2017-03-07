@@ -27,7 +27,7 @@ export class NavbarComponent {
         }, {
             title: 'Mundos',
             icon: 'fa-globe',
-            state: 'main'
+            state: 'world'
         }, {
             title: 'Usuarios',
             icon: 'fa-users',

@@ -34,7 +34,7 @@ describe('Thing API Router:', function() {
     thingIndex.should.equal(routerStub);
   });
 
-  describe('GET /api/things', function() {
+  describe('GET /api/worlds', function() {
     it('should route to world.controller.index', function() {
       routerStub.get
         .withArgs('/', 'worldCtrl.index')
@@ -42,7 +42,7 @@ describe('Thing API Router:', function() {
     });
   });
 
-  describe('GET /api/things/:id', function() {
+  describe('GET /api/worlds/:id', function() {
     it('should route to world.controller.show', function() {
       routerStub.get
         .withArgs('/:id', 'worldCtrl.show')
@@ -50,7 +50,7 @@ describe('Thing API Router:', function() {
     });
   });
 
-  describe('POST /api/things', function() {
+  describe('POST /api/worlds', function() {
     it('should route to world.controller.create', function() {
       routerStub.post
         .withArgs('/', 'worldCtrl.create')
@@ -58,7 +58,7 @@ describe('Thing API Router:', function() {
     });
   });
 
-  describe('PUT /api/things/:id', function() {
+  describe('PUT /api/worlds/:id', function() {
     it('should route to world.controller.upsert', function() {
       routerStub.put
         .withArgs('/:id', 'worldCtrl.upsert')
@@ -66,7 +66,7 @@ describe('Thing API Router:', function() {
     });
   });
 
-  describe('PATCH /api/things/:id', function() {
+  describe('PATCH /api/worlds/:id', function() {
     it('should route to world.controller.patch', function() {
       routerStub.patch
         .withArgs('/:id', 'worldCtrl.patch')
@@ -74,7 +74,7 @@ describe('Thing API Router:', function() {
     });
   });
 
-  describe('DELETE /api/things/:id', function() {
+  describe('DELETE /api/worlds/:id', function() {
     it('should route to world.controller.destroy', function() {
       routerStub.delete
         .withArgs('/:id', 'worldCtrl.destroy')

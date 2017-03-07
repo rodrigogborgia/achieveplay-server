@@ -24,10 +24,14 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 
+import design from '../components/design/design.module';
+import world from './world';
+
 import './app.css';
 
-angular.module('achieveplayServerApp', [ngCookies, ngResource, ngSanitize, uiRouter, _Auth, account,
-  admin, navbar, footer, main, constants, util
+angular.module('achieveplayServerApp', [ngCookies, ngResource, ngSanitize, uiRouter, 
+  _Auth, account, admin, design, world,
+  navbar, footer, main, constants, util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
